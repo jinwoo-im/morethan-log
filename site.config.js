@@ -6,14 +6,14 @@ const CONFIG = {
     role: "Front-End Developer",
     bio: "개발을 위한 개발",
     email: "wjdgnsxhsl@naver.com",
-    linkedin: "gnslalsl12",
+    linkedin: "",
     github: "gnslalsl12",
     instagram: "",
   },
   projects: [
     {
-      name: `Hoony Blog`,
-      href: "https://github.com/gnslalsl12/morethan-log",
+      name: `Portfolio`,
+      href: "https://gnslalsl12.github.io/",
     },
   ],
   // blog setting (required)
@@ -30,7 +30,7 @@ const CONFIG = {
 
   // notion configuration (required)
   notionConfig: {
-    pageId: process.env.NOTION_PAGE_ID,
+    pageId: "4fdde6b08ade4427afc26a328681d353",
   },
 
   // plugin configuration (optional)
