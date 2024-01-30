@@ -30,7 +30,7 @@ const CONFIG = {
 
   // notion configuration (required)
   notionConfig: {
-    pageId: "4fdde6b08ade4427afc26a328681d353",
+    pageId: process.env.NOTION_PAGE_ID,
   },
 
   // plugin configuration (optional)
@@ -68,7 +68,7 @@ const CONFIG = {
     },
   },
   isProd: process.env.VERCEL_ENV === "production", // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
-  revalidateTime: 5, // revalidate time for [slug], index
+  revalidateTime: 1, // revalidate time for [slug], index
 }
 
 module.exports = { CONFIG }
