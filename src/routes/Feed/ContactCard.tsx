@@ -11,7 +11,7 @@ import styled from "@emotion/styled"
 const ContactCard: React.FC = () => {
   return (
     <>
-      <StyledTitle>💬 Contact</StyledTitle>
+      <StyledTitle>💬 연락처</StyledTitle>
       <StyledWrapper>
         {CONFIG.profile.github && (
           <a
@@ -41,7 +41,7 @@ const ContactCard: React.FC = () => {
             css={{ overflow: "hidden" }}
           >
             <AiOutlineMail className="icon" />
-            <div className="name">email</div>
+            <div className="name">이메일 (모바일)</div>
           </a>
         )}
         {CONFIG.profile.linkedin && (

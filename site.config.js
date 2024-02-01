@@ -4,7 +4,7 @@ const CONFIG = {
     name: "정훈",
     image: "/profileImg.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "Front-End Developer",
-    bio: "모르는 것도 공부하면 안다",
+    bio: "모르면 공부해야지",
     email: "wjdgnsxhsl@naver.com",
     linkedin: "",
     github: "gnslalsl12",
@@ -12,7 +12,7 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `Portfolio`,
+      name: `Web Portfolio`,
       href: "https://gnslalsl12.github.io/",
     },
   ],
