@@ -10,7 +10,8 @@ const TagList: React.FC<Props> = () => {
   const router = useRouter()
   const currentTag = router.query.tag || undefined
   const data = useTagsQuery()
-  const [dataKeys, setDataKeys] = useState<String[]>([])
+  const [dataKeys, setDataKeys] = useState<String[][]>([])
+  const mainTags = new Set<String>()
 
   const handleClickTag = (value: any) => {
     // delete
@@ -33,8 +34,43 @@ const TagList: React.FC<Props> = () => {
     }
   }
 
+  const tagContents = (value: String[], i: number) => {
+    const stringValue = value.join("::")
+    if (!mainTags.has(value[1])) {
+      mainTags.add(value[1])
+      return (
+        <>
+          <div className="mainTags">{value[1]}</div>
+          <a
+            key={i}
+            data-active={stringValue === currentTag}
+            onClick={() => handleClickTag(stringValue)}
+          >
+            - {value[2]}
+          </a>
+        </>
+      )
+    } else {
+      return (
+        <a
+          key={i}
+          data-active={stringValue === currentTag}
+          onClick={() => handleClickTag(stringValue)}
+        >
+          - {value[2]}
+        </a>
+      )
+    }
+  }
+
   useEffect(() => {
-    setDataKeys(Object.keys(data).sort())
+    const tempArray: String[][] = []
+    Object.keys(data).map((value) => {
+      const splitted: String[] = value.split("::")
+      if (splitted[2] === undefined || splitted[2].length <= 1) return
+      tempArray.push(splitted)
+    })
+    setDataKeys(tempArray.sort())
   }, [])
 
   return (
@@ -43,15 +79,9 @@ const TagList: React.FC<Props> = () => {
         <Emoji>🏷️</Emoji> 태그
       </div>
       <div className="list">
-        {dataKeys.map((key, index) => (
-          <a
-            key={index}
-            data-active={key === currentTag}
-            onClick={() => handleClickTag(key)}
-          >
-            {key}
-          </a>
-        ))}
+        {dataKeys.map((value, index) => {
+          return tagContents(value, index)
+        })}
       </div>
     </StyledWrapper>
   )
@@ -87,6 +117,22 @@ const StyledWrapper = styled.div`
       display: block;
     }
 
+    .mainTags {
+      display: block;
+      padding: 0.5rem;
+      padding-left: 0.3rem;
+      padding-right: 0.3rem;
+      margin-top:0.3rem
+      margin-bottom: 0.3rem;
+      border-radius: 0.5rem;
+      font-size: 0.975rem;
+      line-height:1rem;
+      font-weight : 600;
+      color: ${({ theme }) => theme.colors.gray11};
+      flex-shrink:0;
+      cursor:default;
+    }
+    
     a {
       display: block;
       padding: 0.25rem;
@@ -113,5 +159,6 @@ const StyledWrapper = styled.div`
         }
       }
     }
+
   }
 `
