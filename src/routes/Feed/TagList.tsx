@@ -79,8 +79,8 @@ const TagList: React.FC<Props> = () => {
         <Emoji>🏷️</Emoji> 태그
       </div>
       <div className="list">
-        {dataKeys.map((value, index) => {
-          return tagContents(value, index)
+        {dataKeys.map((mapValue, index) => {
+          return tagContents(mapValue, index)
         })}
       </div>
     </StyledWrapper>
