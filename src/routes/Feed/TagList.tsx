@@ -39,16 +39,15 @@ const TagList: React.FC<Props> = () => {
     if (!mainTags.has(mapValue[1])) {
       mainTags.add(mapValue[1])
       return (
-        <>
-          <div className="mainTags">{mapValue[1]}</div>
+        <div key={i}>
+          <span className="mainTags">{mapValue[1]}</span>
           <a
-            key={i}
             data-active={stringValue === currentTag}
             onClick={() => handleClickTag(stringValue)}
           >
             - {mapValue[2]}
           </a>
-        </>
+        </div>
       )
     } else {
       return (
@@ -159,6 +158,5 @@ const StyledWrapper = styled.div`
         }
       }
     }
-
   }
 `
