@@ -10,9 +10,7 @@ const TagList: React.FC<Props> = () => {
   const router = useRouter()
   const currentTag = router.query.tag || undefined
   const data = useTagsQuery()
-  const [dataKeys, setDataKeys] = useState<String[][]>([])
   const [mainTags, setMainTags] = useState(new Map<String, String[]>())
-  // const mainTags = new Map<String, String[]>()
 
   const handleClickTag = (value: any) => {
     // delete
@@ -47,7 +45,6 @@ const TagList: React.FC<Props> = () => {
               {value.map((subTag, index) => {
                 const originTag: String =
                   mainTagIndex + "::" + key + "::" + subTag
-                console.log(originTag)
                 return (
                   <a
                     key={index}
