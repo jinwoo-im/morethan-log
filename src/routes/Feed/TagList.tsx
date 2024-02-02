@@ -34,19 +34,19 @@ const TagList: React.FC<Props> = () => {
     }
   }
 
-  const tagContents = (value: String[], i: number) => {
-    const stringValue = value.join("::")
-    if (!mainTags.has(value[1])) {
-      mainTags.add(value[1])
+  const tagContents = (mapValue: String[], i: number) => {
+    const stringValue: String = mapValue.join("::")
+    if (!mainTags.has(mapValue[1])) {
+      mainTags.add(mapValue[1])
       return (
         <>
-          <div className="mainTags">{value[1]}</div>
+          <div className="mainTags">{mapValue[1]}</div>
           <a
             key={i}
             data-active={stringValue === currentTag}
             onClick={() => handleClickTag(stringValue)}
           >
-            - {value[2]}
+            - {mapValue[2]}
           </a>
         </>
       )
@@ -57,7 +57,7 @@ const TagList: React.FC<Props> = () => {
           data-active={stringValue === currentTag}
           onClick={() => handleClickTag(stringValue)}
         >
-          - {value[2]}
+          - {mapValue[2]}
         </a>
       )
     }
