@@ -34,7 +34,7 @@ const TagList: React.FC<Props> = () => {
   }
 
   const tagContents = () => {
-    var mainTagIndex = 0
+    let mainTagIndex = 0
     return (
       <>
         {Array.from(tags).map(([key, value]) => {
