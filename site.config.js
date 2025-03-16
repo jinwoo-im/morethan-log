@@ -1,29 +1,32 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "정훈",
+    name: "jinwooim",
     image: "/profileImg.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "SW Developer",
-    bio: "Grow to learn, learn to grow.",
-    email: "wjdgnsxhsl@naver.com",
-    linkedin: "",
-    github: "gnslalsl12",
+    role: "Undergraduate student researcher",
+    bio: "I am an undergraduate research student in iASL(inha Autonomous system lab) at Inha University.",
+    email:"jinwooiminha@gmail.com",
+    linkedin: "jinwoo-im-aero",
+    github: "imrealhelper",
     instagram: "",
   },
   projects: [
     {
-      name: `Web Portfolio`,
-      href: "https://gnslalsl12.github.io/",
+      name: `morethan-log`,
+      href: "https://github.com/morethanmin/morethan-log",
+    },{
+      name: `supersonic`,
+      href: "https://supersonic.streamlit.app/",
     },
   ],
   // blog setting (required)
   blog: {
-    title: "Hoony Blog",
-    description: "Welcome to Hoony Blog!",
+    title: "Jinwooim Blog",
+    description: "Welcome to My Blog!",
   },
 
   // CONFIG configration (required)
-  link: "https://hoonyblog.vercel.app",
+  link: "https://morethan-log.vercel.app",
   since: 2024, // If leave this empty, current year will be used.
   lang: "ko-KR", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
@@ -37,25 +40,25 @@ const CONFIG = {
 
   // plugin configuration (optional)
   googleAnalytics: {
-    enable: true,
+    enable: false,
     config: {
       measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "",
     },
   },
   googleSearchConsole: {
-    enable: true,
+    enable: false,
     config: {
       siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
     },
   },
   naverSearchAdvisor: {
-    enable: true,
+    enable: false,
     config: {
       siteVerification: process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION || "",
     },
   },
   utterances: {
-    enable: true,
+    enable: false,
     config: {
       repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
       "issue-term": "og:title",
